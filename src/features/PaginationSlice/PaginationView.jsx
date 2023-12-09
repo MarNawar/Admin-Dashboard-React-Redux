@@ -26,29 +26,30 @@ function PaginationView() {
 
     <button className="btn-pagination"  onClick={()=>{
       dispatch(paginationActions.indexFirst());
-    }}  disabled={pagination.ind===0?true:false}>fr
-      {/* <i className="fa-solid fa-angles-left"></i> */}
+    }}  disabled={pagination.ind===0?true:false}>
+      <i className="fa-solid fa-angles-left"></i>
     </button>
 
     <button className="btn-pagination" onClick={()=>{
       dispatch(paginationActions.indexDec());
-    }} disabled={pagination.ind===0?true:false}>prev
-      {/* <i className="fa-solid fa-angle-left"></i> */}
+    }} disabled={pagination.ind===0?true:false}>
+      <i className="fa-solid fa-angle-left"></i>
     </button>
     
     <UpdatePaginationButtons/>
 
     <button className="btn-pagination"  onClick={()=>{
       dispatch(paginationActions.indexInc());
-    }} disabled={pagination.ind===(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage)?true:false}>next
-      {/* <i className="fa-solid fa-angle-right"></i> */}
+    }} disabled={pagination.ind===(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage)?true:false}>
+      <i className="fa-solid fa-angle-right"></i>
     </button>
     
     <button className="btn-pagination" onClick={()=>{
       dispatch(paginationActions.indexLast(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage));
-    }} disabled={pagination.ind===(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage)?true:false}>lst
-      {/* <i className="fa-solid fa-angles-right"></i> */}
+    }} disabled={pagination.ind===(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage)?true:false}>
+      <i className="fa-solid fa-angles-right"></i>
     </button>
+    
     </div>
     </>
 
