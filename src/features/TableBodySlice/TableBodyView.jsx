@@ -23,6 +23,8 @@ function TableBody() {
 
   useEffect(()=>{
     setUsers(user.users);
+    const pera = document.querySelector('.selected-result');
+    pera.textContent = `0 item(s) selected from ${user.users.length} item(s)`;
   },[user])
 
   function editRow(e, id){
@@ -58,7 +60,8 @@ function TableBody() {
     else{
       masterCheckbox.checked = false;
     }
-    // document.querySelector('selected-result').innerHTML = `${checkedRows.length} item(s) selected from ${users.length} item(s)`
+    const pera = document.querySelector('.selected-result');
+    pera.textContent = `${checkedRows.length} item(s) selected from ${users.length} item(s)`;
   }
 
   return (
@@ -102,10 +105,10 @@ function TableBody() {
               {/* Buttons for editing and deleting rows */}
               <td>
                 <button className="edit" onClick={(e)=>{updateRow(e,element.id )}}>
-                  <i class="fa-solid fa-check" style={{color: "#36383a;"}}></i>
+                  <i class="fa-solid fa-check" style={{color: "#36383a"}}></i>
                 </button>
                 <button className="delete" onClick={()=>dispatch(userActions.delete(element.id))}>
-                  <i className="fa-solid fa-trash" style={{color: "#FF7F7F;"}}></i>
+                  <i className="fa-solid fa-trash" style={{color: "#FF7F7F"}}></i>
                 </button>
               </td>
             </tr>:
@@ -119,7 +122,7 @@ function TableBody() {
             {/* Buttons for editing and deleting rows */}
             <td>
               <button className="edit" onClick={(e)=>{editRow(e,element.id )}}>
-                <i className="fa-regular fa-pen-to-square" style={{color: "#36383a;"}}></i>
+                <i className="fa-regular fa-pen-to-square" style={{color: "#36383a"}}></i>
               </button>
               <button className="delete" onClick={()=>dispatch(userActions.delete(element.id))}>
                 <i className="fa-solid fa-trash" style={{color: "#FF7F7F"}}></i>
