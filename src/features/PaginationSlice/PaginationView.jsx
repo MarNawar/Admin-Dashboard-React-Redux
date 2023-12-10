@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { paginationActions } from './PaginationSlice'
 import UpdatePaginationButtons from './updatePaginationButtons';
+
 function PaginationView() {
   const pagination = useSelector((state)=> {
     return state.pagination
@@ -40,13 +41,13 @@ function PaginationView() {
 
     <button className="btn-pagination"  onClick={()=>{
       dispatch(paginationActions.indexInc());
-    }} disabled={pagination.ind===(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage)?true:false}>
+    }} disabled={pagination.ind===(Math.floor(Math.abs((user.users.length-1)/pagination.rowsPerPage))*pagination.rowsPerPage)?true:false}>
       <i className="fa-solid fa-angle-right"></i>
     </button>
     
     <button className="btn-pagination" onClick={()=>{
-      dispatch(paginationActions.indexLast(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage));
-    }} disabled={pagination.ind===(Math.floor(user.users.length/pagination.rowsPerPage)*pagination.rowsPerPage)?true:false}>
+      dispatch(paginationActions.indexLast((Math.floor(Math.abs((user.users.length-1)/pagination.rowsPerPage))*pagination.rowsPerPage)));
+    }} disabled={pagination.ind===(Math.floor(Math.abs((user.users.length-1)/pagination.rowsPerPage))*pagination.rowsPerPage)?true:false}>
       <i className="fa-solid fa-angles-right"></i>
     </button>
     

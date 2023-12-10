@@ -20,9 +20,6 @@ function UpdatePaginationButtons() {
 
   },[user, pagination])
 
-  console.log(pagination, user.users.length);
-
-
   const dispatch = useDispatch()
   
   const fBtn = Math.floor(ind / (pagination.rowsPerPage + 1)) * (pagination.rowsPerPage) + 1;
@@ -30,7 +27,6 @@ function UpdatePaginationButtons() {
 
   const arr = new Array(lBtn-fBtn+1).fill(0);
 
-  console.log('ggg',arr, fBtn, lBtn,user);
   return (
       <span className="numberButton">
         {

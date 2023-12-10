@@ -8,11 +8,11 @@ function TableBody() {
   const [tobeUpdated, setTobeUpdated] = useState([]);
 
   const user = useSelector((state)=> {
-    return state.user
+    return state.user;
   });
 
   const pagination = useSelector((state)=> {
-    return state.pagination
+    return state.pagination;
   });
 
   const dispatch = useDispatch()
@@ -23,9 +23,12 @@ function TableBody() {
 
   useEffect(()=>{
     setUsers(user.users);
-    const pera = document.querySelector('.selected-result');
-    pera.textContent = `0 item(s) selected from ${user.users.length} item(s)`;
   },[user])
+
+  useEffect(()=>{
+    const pera = document.querySelector('.selected-result');
+    pera.textContent = `0 item(s) selected from ${users.length} item(s)`;
+  },[user,pagination])
 
   function editRow(e, id){
     setTobeUpdated((prev)=>{

@@ -20,13 +20,9 @@ function Header() {
     const checkedRows = document.querySelectorAll('.trows input[type="checkbox"]:checked');
     const masterCheckbox = document.querySelector('.theading input[type="checkbox"]');
     masterCheckbox.checked = false;
-
-
-    console.log(checkedRows[0].id, masterCheckbox);
     checkedRows.forEach((row)=>{
       dispatch(userActions.delete(row.id))
     })
-
   }
   return (
     <div className="actions_container">
