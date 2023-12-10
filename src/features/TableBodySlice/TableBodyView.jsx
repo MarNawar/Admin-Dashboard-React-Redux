@@ -108,7 +108,7 @@ function TableBody() {
               {/* Buttons for editing and deleting rows */}
               <td>
                 <button className="edit" onClick={(e)=>{updateRow(e,element.id )}}>
-                  <i class="fa-solid fa-check" style={{color: "#36383a"}}></i>
+                  <i className="fa-solid fa-check" style={{color: "#36383a"}}></i>
                 </button>
                 <button className="delete" onClick={()=>dispatch(userActions.delete(element.id))}>
                   <i className="fa-solid fa-trash" style={{color: "#FF7F7F"}}></i>
