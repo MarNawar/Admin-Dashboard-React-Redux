@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { paginationActions } from './PaginationSlice'
-import UpdatePaginationButtons from './updatePaginationButtons';
+import UpdatePaginationButtons from './UpdatePaginationButtons';
 import PaginationDropdownForRowPerPage from './PaginationDropdownForRowPerPage';
 
 function PaginationView() {
