@@ -60,12 +60,12 @@ const userSlice = createSlice({
       }
       else{
         state.users = state.globalUsers.filter((itm)=>{
-          if (JSON.stringify(itm.name).toLowerCase().includes(action.payload) || JSON.stringify(itm.email).toLowerCase().includes(action.payload) || JSON.stringify(itm.role).toLowerCase().includes(action.payload)) {
+          if (JSON.stringify(itm.name).toLowerCase().includes(action.payload.toLowerCase()) || JSON.stringify(itm.email).toLowerCase().includes(action.payload.toLowerCase()) || JSON.stringify(itm.role).toLowerCase().includes(action.payload.toLowerCase())) {
             return true;
           }
         })
         state.isFiltered =true;
-        state.filteredText = action.payload;
+        state.filteredText = action.payload.toLowerCase();
       }
     },
   },
