@@ -34,7 +34,7 @@ function UpdatePaginationButtons() {
           const mapIndex =i;
 
         return <button key={i+fBtn} className="btn-pagination" onClick={()=>{
-            const newIndex = Number(fBtn-1 + mapIndex * pagination.rowsPerPage);
+            const newIndex = Number((fBtn-1 + mapIndex) * pagination.rowsPerPage);
             dispatch(paginationActions.indexSet(newIndex));
           }}>
           {i+fBtn}

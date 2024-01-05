@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
 const initialState={
-  rowsPerPage:10,
+  rowsPerPage:5,
   ind: 0,
 }
 const paginationSlice = createSlice({
@@ -8,10 +8,10 @@ const paginationSlice = createSlice({
   initialState,
   reducers:{
     indexInc: (state)=>{
-      state.ind= state.ind+10;
+      state.ind= state.ind+state.rowsPerPage;
     },
     indexDec: (state)=>{
-      state.ind = state.ind-10;
+      state.ind = state.ind-state.rowsPerPage;
     },
     indexFirst:(state)=>{
       state.ind =0 ;
@@ -21,6 +21,9 @@ const paginationSlice = createSlice({
     },
     indexSet:(state,action)=>{
       state.ind = action.payload;
+    },
+    setRowPerPage:(state, action)=>{
+      state.rowsPerPage = action.payload;
     }
   }
 })

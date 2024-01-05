@@ -50,6 +50,7 @@ function TableBody() {
     }
 
     dispatch(userActions.update(obj));
+    l
 
   }
 
@@ -71,6 +72,7 @@ function TableBody() {
     <tbody className="trows">
       { users.filter((_,index)=>{
         if(index>=pagination.ind&&index<pagination.ind+pagination.rowsPerPage){
+          console.log(pagination.ind, index, pagination.ind+pagination.rowsPerPage)
           return true;
         }
       }).map((element)=>{

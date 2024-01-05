@@ -14,7 +14,7 @@ const initialState = {
 export const fetchUsers = createAsyncThunk('user/fetchUsers', ()=>{
   return axios
     .get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
-    .then(response=> response.data)
+    .then(response=> {return response.data})
 })
 
 const userSlice = createSlice({
@@ -40,6 +40,7 @@ const userSlice = createSlice({
       state.globalUsers = state.globalUsers.map((user)=>{
         return user.id === action.payload.id?action.payload:user;
       });
+
       if(state.isFiltered === false){
         state.users = state.globalUsers;
       }

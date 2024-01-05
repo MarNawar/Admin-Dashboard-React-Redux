@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { paginationActions } from './PaginationSlice'
 import UpdatePaginationButtons from './updatePaginationButtons';
+import PaginationDropdownForRowPerPage from './PaginationDropdownForRowPerPage';
 
 function PaginationView() {
   const pagination = useSelector((state)=> {
@@ -22,6 +23,7 @@ function PaginationView() {
 
   return <>
   <div className="updatePaginationContainer">
+    <PaginationDropdownForRowPerPage/>
 
     <span style={{fontSize:'14px', margin:'0 20px'}}>{user.users.length ? Math.ceil((pagination.ind + 1) / pagination.rowsPerPage) : 0} Page of {Math.ceil(user.users.length / pagination.rowsPerPage)}</span>
 
