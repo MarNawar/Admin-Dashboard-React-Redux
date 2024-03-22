@@ -18,6 +18,7 @@ function FilterView() {
       className="form-input-filter search-icon"
       id="filter"
       placeholder="Search Items"
+      autoComplete="off"
       value={text}
       onChange={(e)=>{
         debouncedSearch(e.target.value)
